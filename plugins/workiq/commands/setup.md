@@ -17,11 +17,7 @@ Run `node --version` to verify Node.js is installed. If not, direct the user to 
 
 ### 2. Accept the EULA
 
-Run this command and confirm it succeeds:
-
-```
-npx -y @microsoft/workiq accept-eula
-```
+Use the Work IQ MCP tool `accept_eula` with the EULA URL `https://github.com/microsoft/work-iq-mcp`. This must be accepted before any queries will work.
 
 ### 3. Microsoft 365 Requirements
 
@@ -31,15 +27,13 @@ Inform the user they need:
 
 ### 4. Test the Connection
 
-Run a simple test query to verify everything works:
+Use the Work IQ MCP tool `ask_work_iq` with a simple test query like "What meetings do I have today?" to verify everything works.
 
-```
-npx -y @microsoft/workiq ask -q "What meetings do I have today?"
-```
+If the MCP tools are not available (server not running), suggest the user restart Claude Code so the MCP server initializes, then try again.
 
 ### 5. Tenant Configuration (Optional)
 
-If the user provided a tenant ID via $ARGUMENTS, test with:
+If the user provided a tenant ID via $ARGUMENTS, note that tenant-specific configuration can be set via the CLI:
 
 ```
 npx -y @microsoft/workiq ask -q "test" -t <tenant-id>
@@ -53,13 +47,17 @@ npx -y @microsoft/workiq ask -q "test" -t <tenant-id>
 - Reference: https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/workiq-overview
 
 ### MCP Server Not Responding
+- Restart Claude Code — the MCP server starts at session launch
+- Check that Node.js is installed and `npx` has internet access
 - Try running `npx -y @microsoft/workiq mcp` manually to see error output
-- Check for firewall or proxy issues blocking npx
 
 ### No Results Returned
 - Work IQ respects existing Microsoft 365 permissions
 - The user can only access data they already have permission to view
 - Try broader queries first to verify connectivity
+
+### Slow Responses
+- Queries typically take 5-15 seconds — this is the round-trip to Microsoft's services and is expected
 
 ## Resources
 
