@@ -23,7 +23,7 @@ This plugin integrates [Microsoft Work IQ](https://github.com/microsoft/work-iq-
 
 ```bash
 cd ~/.claude/plugins
-git clone https://github.com/aaanerud/claude-code-workiq-plugin.git workiq
+git clone https://github.com/Aanerud/claude-code-workiq-plugin.git workiq
 ```
 
 ### Option 2: Manual download
