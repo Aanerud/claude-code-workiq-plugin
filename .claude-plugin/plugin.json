@@ -1,0 +1,8 @@
+{
+  "name": "workiq",
+  "description": "Microsoft Work IQ integration for Claude Code. Query your Microsoft 365 environment for people, emails, meetings, documents, Teams messages, and organizational context directly while coding.",
+  "version": "0.1.0",
+  "author": {
+    "name": "aaanerud"
+  }
+}
