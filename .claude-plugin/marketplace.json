@@ -1,0 +1,20 @@
+{
+  "name": "aanerud-plugins",
+  "description": "Claude Code plugins by aanerud",
+  "owner": {
+    "name": "aanerud",
+    "url": "https://github.com/Aanerud"
+  },
+  "plugins": [
+    {
+      "name": "workiq",
+      "description": "Microsoft Work IQ integration — query people, emails, meetings, documents, and Teams messages from your Microsoft 365 environment directly while coding.",
+      "source": "./plugins/workiq",
+      "homepage": "https://github.com/Aanerud/claude-code-workiq-plugin",
+      "category": "productivity",
+      "author": {
+        "name": "aanerud"
+      }
+    }
+  ]
+}

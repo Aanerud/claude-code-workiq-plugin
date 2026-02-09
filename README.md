@@ -19,20 +19,21 @@ This plugin integrates [Microsoft Work IQ](https://github.com/microsoft/work-iq-
 
 ## Installation
 
-### Option 1: Clone directly
+### Step 1: Add the marketplace
 
-```bash
-cd ~/.claude/plugins
-git clone https://github.com/Aanerud/claude-code-workiq-plugin.git workiq
+```
+/plugin marketplace add Aanerud/claude-code-workiq-plugin
 ```
 
-### Option 2: Manual download
+### Step 2: Install the plugin
 
-Download and extract to `~/.claude/plugins/workiq/`
+```
+/plugin install workiq@aanerud-plugins
+```
 
-### First-time Setup
+### Step 3: First-time setup
 
-After installing the plugin, run `/workiq:setup` in Claude Code to verify your configuration and complete authentication.
+After installing, run `/workiq:setup` in Claude Code to verify your configuration and complete authentication.
 
 ## What's Included
 
@@ -63,26 +64,6 @@ Provides Claude with knowledge about what Work IQ can do, so it proactively sugg
 /workiq:ask What meetings do I have tomorrow?
 /workiq:ask Find documents about the Q4 architecture review
 /workiq:ask Summarize today's messages in the Platform Engineering channel
-```
-
-## Plugin Structure
-
-```
-workiq/
-├── .claude-plugin/
-│   └── plugin.json              # Plugin metadata
-├── .mcp.json                    # MCP server config (stdio via npx)
-├── commands/
-│   ├── ask.md                   # /workiq:ask command
-│   └── setup.md                 # /workiq:setup command
-├── agents/
-│   └── org-knowledge.md         # Organizational context agent
-├── skills/
-│   └── workiq-capabilities/
-│       └── SKILL.md             # WorkIQ capability knowledge
-├── .gitignore
-├── LICENSE
-└── README.md
 ```
 
 ## Security & Privacy
